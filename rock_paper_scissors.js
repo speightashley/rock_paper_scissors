@@ -1,3 +1,4 @@
+// Page elements
 const startGame = document.getElementById("startGame");
 const metrics = document.getElementById("metrics");
 const controls = document.getElementById("controls");
@@ -7,15 +8,18 @@ const buttons = document.querySelectorAll("button.choice");
 const startBtn = document.getElementById("start_game");
 const currentScore = document.getElementById("score");
 
+// In game variables
 let playerScore = 0;
 let computerScore = 0;
 
+// Start button for starting game
 startBtn.addEventListener("click", (e) => {
   toggleComponent(startGame, "hide");
   toggleComponent(controls, "hide");
   finalResult.classList.add("hide");
 });
 
+// Game choice buttons
 buttons.forEach((element) => {
   element.addEventListener("click", (e) => {
     let round = playRound(e.target.innerText, getComputerChoice());
@@ -25,6 +29,7 @@ buttons.forEach((element) => {
     currentScore.classList.remove("hide");
     currentScore.firstElementChild.innerText = `Player Score: ${playerScore} Computer Score: ${computerScore}`;
 
+    // Logic for checking if the game has been won
     if (playerScore == 5 || computerScore == 5) {
       finalResult.classList.toggle("hide");
       controls.classList.toggle("hide");

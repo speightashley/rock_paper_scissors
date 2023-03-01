@@ -11,8 +11,8 @@ let playerScore = 0;
 let computerScore = 0;
 
 startBtn.addEventListener("click", (e) => {
-  startGame.classList.toggle("hide");
-  controls.classList.toggle("hide");
+  toggleComponent(startGame, "hide");
+  toggleComponent(controls, "hide");
   finalResult.classList.add("hide");
 });
 
@@ -42,6 +42,10 @@ buttons.forEach((element) => {
     }
   });
 });
+
+function toggleComponent(component, element) {
+  component.classList.toggle(element);
+}
 
 function getComputerChoice() {
   const choices = ["ROCK", "PAPER", "SCISSORS"];
@@ -87,12 +91,12 @@ function playRound(playerSelection, computerSelection) {
 // const computerSelection = getComputerChoice();
 // console.log(playRound(playerSelection, computerSelection));
 
-function game() {
-  for (let index = 0; index < 5; index++) {
-    playerSelection = prompt("What do you want to choose?");
-    playRound(playerSelection, getComputerChoice());
-    console.log(
-      `Player Score: ${playerScore} Computer Score: ${computerScore}`
-    );
-  }
-}
+// function game() {
+//   for (let index = 0; index < 5; index++) {
+//     playerSelection = prompt("What do you want to choose?");
+//     playRound(playerSelection, getComputerChoice());
+//     console.log(
+//       `Player Score: ${playerScore} Computer Score: ${computerScore}`
+//     );
+//   }
+// }

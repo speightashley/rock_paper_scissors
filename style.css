@@ -1,11 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background-color: #172a2d;
   color: #4893ab;
   text-align: center;
   display: flex;
-  align-items: center;
   flex-direction: column;
-  justify-content: space-around;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 button {
@@ -14,18 +18,41 @@ button {
   background-color: #4893ab;
   border-radius: 10px;
   padding: 20px;
-  margin: 5px;
+  margin: 15px;
+}
+
+button:hover {
+  background-color: #94cdd9;
+  color: #172a2d;
 }
 
 .hide {
   display: none;
 }
 
+div {
+  padding: 15px;
+}
+
 span {
   font-size: 24px;
   color: #94cdd9;
-  padding: 30px;
+  padding: 5px;
+}
+
+h1.heading {
+  font-size: 50px;
+  color: #172a2d;
+  background-color: #94cdd9;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 10px;
+  margin-bottom: 25px;
 }
 
 h2 {
+  padding: 25px;
+  font-size: 25px;
+  font-weight: bolder;
 }

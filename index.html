@@ -4,29 +4,36 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
   <body>
-    <div class="start_game">
-      <h1 class="show">Start Game</h1>
-      <button id="start_game" class="show">Start Game</button>
+    <div id="finalResult" class="hide">
+      <span id="final-result"></span>
     </div>
-    <div class="metrics">
+    <div id="startGame" class="start_game show">
+      <h1 class="show">Start Game</h1>
+
+      <button id="start_game">Start Game</button>
+    </div>
+    <div id="metrics" class="hide">
       <h2>Metrics</h2>
       <span id="metrics"></span>
     </div>
-    <div class="controls">
-      <h2>Controls</h2>
-      <button>Rock</button>
-      <button>Paper</button>
-      <button>Scissors</button>
+    <div id="controls" class="hide">
+      <h2>Pick your weapon</h2>
+      <button id="rock" class="choice">Rock</button>
+      <button id="paper" class="choice">Paper</button>
+      <button id="scissors" class="choice">Scissors</button>
     </div>
-    <div class="round_results">
-      <span id="round-result"></span>
+    <div id="score" class="hide">
+      <span id="currentScore"></span>
     </div>
-    <div class="final_result">
-      <span id="final-result"></span>
+
+    <div id="roundResults">
+      <span id="round-result" class="hide"></span>
     </div>
+
     <script src="rock_paper_scissors.js"></script>
   </body>
 </html>

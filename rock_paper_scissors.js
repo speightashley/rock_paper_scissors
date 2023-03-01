@@ -1,5 +1,47 @@
+const startGame = document.getElementById("startGame");
+const metrics = document.getElementById("metrics");
+const controls = document.getElementById("controls");
+const roundResults = document.getElementById("round-result");
+const finalResult = document.getElementById("finalResult");
+const buttons = document.querySelectorAll("button.choice");
+const startBtn = document.getElementById("start_game");
+const currentScore = document.getElementById("score");
+
 let playerScore = 0;
 let computerScore = 0;
+
+startBtn.addEventListener("click", (e) => {
+  startGame.classList.toggle("hide");
+  controls.classList.toggle("hide");
+  finalResult.classList.add("hide");
+});
+
+buttons.forEach((element) => {
+  element.addEventListener("click", (e) => {
+    let round = playRound(e.target.innerText, getComputerChoice());
+    roundResults.innerText = round;
+    roundResults.classList.remove("hide");
+
+    currentScore.classList.remove("hide");
+    currentScore.firstElementChild.innerText = `Player Score: ${playerScore} Computer Score: ${computerScore}`;
+
+    if (playerScore == 5 || computerScore == 5) {
+      finalResult.classList.toggle("hide");
+      controls.classList.toggle("hide");
+      roundResults.classList.add("hide");
+      currentScore.classList.toggle("hide");
+      if (playerScore == 5) {
+        finalResult.firstElementChild.innerText = `You won! Your Score: ${playerScore} Computer Score: ${computerScore}`;
+      } else if (computerScore == 5) {
+        finalResult.firstElementChild.innerText = `You Lost! Your Score: ${playerScore} Computer Score: ${computerScore}`;
+      }
+      startGame.classList.toggle("hide");
+      startGame.firstElementChild.innerText = "Start a New Game";
+      playerScore = 0;
+      computerScore = 0;
+    }
+  });
+});
 
 function getComputerChoice() {
   const choices = ["ROCK", "PAPER", "SCISSORS"];
